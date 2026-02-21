@@ -9,7 +9,7 @@ export OUTPATH=./dist
 export ADD_HOOKS="self-updater.bg.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
 export ICON=/usr/share/icons/hicolor/scalable/apps/dosbox-x.svg
-export DESKTOP=/usr/share/applications/dosbox-x.desktop
+export DESKTOP=/usr/share/applications/com.dosbox_x.DOSBox-X.desktop
 
 # Deploy dependencies
 #mv -v /usr/share/dosbox-x/ .AppDir/bin
