@@ -13,7 +13,7 @@ export DESKTOP=/usr/share/applications/com.dosbox_x.DOSBox-X.desktop
 
 # Deploy dependencies
 #mv -v /usr/share/dosbox-x/ .AppDir/bin
-echo "y" | quick-sharun /usr/bin/dosbox-x
+quick-sharun /usr/bin/dosbox-x
 
 # Additional changes can be done in between here
 
