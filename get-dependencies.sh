@@ -6,13 +6,21 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm libdecor
+pacman -Syu --noconfirm fluidsynth glu libslirp sdl2_net
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano
+get-debloated-pkgs --add-common --prefer-nano libdecor-mini ffmpeg-mini
 
-# Comment this out if you need an AUR package
-make-aur-package dosbox-x-sdl2
+echo "Making stable build of DOSBox-X..."
+echo "---------------------------------------------------------------"
+REPO="https://github.com/joncampbell123/dosbox-x"
+VERSION="$(git ls-remote --tags "$REPO" | grep -oE 'refs/tags/dosbox-x-v[0-9]+\.[0-9]+\.[0-9]+' | sort -uV | tail -n1 | sed 's/.*dosbox-x-v//')"
+git clone --branch "dosbox-x-v$VERSION" --single-branch --recursive --depth 1 "$REPO" ./dosbox-x
+echo "$VERSION" > ~/version
 
-# If the application needs to be manually built that has to be done down here
+cd ./dosbox-x
+./autogen.sh
+./configure --enable-debug --enable-avcodec --prefix=/usr --enable-sdl2
+make -j$(nproc)
+make install
