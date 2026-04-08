@@ -11,7 +11,7 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export ICON=/usr/share/icons/hicolor/scalable/apps/dosbox-x.svg
 export DESKTOP=/usr/share/applications/com.dosbox_x.DOSBox-X.desktop
 export DEPLOY_OPENGL=1
-export DEPLOY_SYS_PYTHON=1
+export DEPLOY_PYTHON=1
 
 # Deploy dependencies
 #mv -v /usr/share/dosbox-x/ .AppDir/bin
