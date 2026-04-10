@@ -14,8 +14,7 @@ export DEPLOY_OPENGL=1
 export DEPLOY_PYTHON=1
 
 # Deploy dependencies
-#mv -v /usr/share/dosbox-x/ .AppDir/bin
-quick-sharun /usr/bin/dosbox-x
+quick-sharun /usr/bin/dosbox-x  /usr/lib/libfluidsynth.so*
 
 # Additional changes can be done in between here
 
