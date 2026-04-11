@@ -1,0 +1,4 @@
+#!/bin/sh
+dir=$CONFIGDIR/dosbox-x
+mkdir -p "$dir"
+cd "$dir"
