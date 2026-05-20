@@ -11,10 +11,11 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export ICON=/usr/share/icons/hicolor/scalable/apps/dosbox-x.svg
 export DESKTOP=/usr/share/applications/com.dosbox_x.DOSBox-X.desktop
 export DEPLOY_OPENGL=1
+export DEPLOY_PIPEWIRE=1
 export DEPLOY_PYTHON=1
 
 # Deploy dependencies
-quick-sharun /usr/bin/dosbox-x  /usr/lib/libfluidsynth.so*
+quick-sharun /usr/bin/dosbox-x /usr/lib/libfluidsynth.so* /usr/lib/libXtst.so*
 
 # Additional changes can be done in between here
 
