@@ -22,9 +22,6 @@ echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
 
-# Comment this out if you need an AUR package
-#make-aur-package dosbox-x-sdl2
-
 echo "Making stable build of DOSBox-X..."
 echo "---------------------------------------------------------------"
 REPO="https://github.com/joncampbell123/dosbox-x"
