@@ -11,11 +11,7 @@ pacman -Syu --noconfirm \
     fluidsynth \
     glu        \
     libdecor   \
-    libpcap    \
     libslirp   \
-    libxkbfile \
-    libxrandr  \
-    libxtst    \
     sdl2_net
 
 echo "Installing debloated packages..."
