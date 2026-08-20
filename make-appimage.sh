@@ -3,8 +3,7 @@
 set -eu
 
 ARCH=$(uname -m)
-#VERSION=$(pacman -Q dosbox-x-sdl2 | awk '{print $2; exit}')
-export ARCH #VERSION
+export ARCH
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
