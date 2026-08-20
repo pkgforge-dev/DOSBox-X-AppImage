@@ -7,8 +7,16 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
-    libdecor \
-    python
+    ffmpeg     \
+    fluidsynth \
+    glu        \
+    libdecor   \
+    libpcap    \
+    libslirp   \
+    libxkbfile \
+    libxrandr  \
+    libxtst    \
+    sdl2_net
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
