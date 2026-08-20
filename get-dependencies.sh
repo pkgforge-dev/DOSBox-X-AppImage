@@ -15,6 +15,18 @@ echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
-make-aur-package dosbox-x-sdl2
+#make-aur-package dosbox-x-sdl2
 
-# If the application needs to be manually built that has to be done down here
+echo "Making stable build of DOSBox-X..."
+echo "---------------------------------------------------------------"
+REPO="https://github.com/joncampbell123/dosbox-x"
+VERSION="$(git ls-remote --tags "$REPO" | grep -oE 'refs/tags/dosbox-x-v[0-9]+\.[0-9]+\.[0-9]+' | sort -uV | tail -n1 | sed 's/.*dosbox-x-v//')"
+git clone --branch "dosbox-x-v$VERSION" --single-branch --recursive --depth 1 "$REPO" ./dosbox-x
+echo "$VERSION" > ~/version
+
+cd ./dosbox-x
+patch -Np1 -i "../ffmpeg9.patch"
+./autogen.sh
+./configure --enable-debug --enable-avcodec --prefix=/usr --enable-sdl2
+make
+make install
