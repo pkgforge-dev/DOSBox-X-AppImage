@@ -10,13 +10,12 @@ pacman -Syu --noconfirm \
     ffmpeg     \
     fluidsynth \
     glu        \
-    libdecor   \
     libslirp   \
     sdl2_net
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano
+get-debloated-pkgs --add-common --prefer-nano libdecor-mini
 
 echo "Making stable build of DOSBox-X..."
 echo "---------------------------------------------------------------"
