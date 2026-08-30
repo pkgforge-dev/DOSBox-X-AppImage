@@ -28,5 +28,5 @@ cd ./dosbox-x
 patch -Np1 -i "../ffmpeg9.patch"
 ./autogen.sh
 ./configure --enable-debug --enable-avcodec --prefix=/usr --enable-sdl2
-make
+make -j$(nproc)
 make install
