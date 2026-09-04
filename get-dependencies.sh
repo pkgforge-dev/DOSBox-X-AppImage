@@ -7,7 +7,6 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
-    ffmpeg     \
     fluidsynth \
     glu        \
     libslirp   \
@@ -15,7 +14,7 @@ pacman -Syu --noconfirm \
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano libdecor-mini
+get-debloated-pkgs --add-common --prefer-nano libdecor-mini ffmpeg-mini
 
 echo "Making stable build of DOSBox-X..."
 echo "---------------------------------------------------------------"
