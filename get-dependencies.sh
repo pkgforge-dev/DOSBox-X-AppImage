@@ -6,11 +6,7 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm \
-    fluidsynth \
-    glu        \
-    libslirp   \
-    sdl2_net
+pacman -Syu --noconfirm fluidsynth glu libslirp sdl2_net
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
